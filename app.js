@@ -71,6 +71,6 @@ app.use('/campgrounds', campgroundRoutes);
 //NEAT!!!!
 //eval(require('locus'));
 
-app.listen(port, process.env.IP ()=>{
+app.listen(port, process.env.IP, ()=>{
   console.log("Yelp server set up");
 });
