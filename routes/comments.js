@@ -95,7 +95,7 @@ router.delete('/:comment_id', middleware.checkCommentOwnership, (req, res)=>{
         res.redirect('/campgrounds/'+req.params.id);
       })
       .catch((error)=>{
-
+        req.flash('error', 'Cannot delete comment.');
       });
 });
 

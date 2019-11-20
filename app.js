@@ -10,7 +10,7 @@ const express       = require('express'),
       Comment       = require('./models/comment'),
       methodOverride = require('method-override'),
       flash         = require('connect-flash'),
-      port          = 3000,
+      port          = process.env.PORT || 8080,
       app           = express(),
       seedDB        = require('./seeds');
 
@@ -71,6 +71,6 @@ app.use('/campgrounds', campgroundRoutes);
 //NEAT!!!!
 //eval(require('locus'));
 
-app.listen(port, ()=>{
+app.listen(port, process.env.IP ()=>{
   console.log("Yelp server set up");
 });
