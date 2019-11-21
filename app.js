@@ -10,8 +10,8 @@ const express       = require('express'),
       Comment       = require('./models/comment'),
       methodOverride = require('method-override'),
       flash         = require('connect-flash'),
-      port          = process.env.PORT || 8080,
       app           = express(),
+      port          = process.env.PORT || 8080,
       seedDB        = require('./seeds');
 
 //requireing routes
@@ -29,7 +29,8 @@ app.use(methodOverride('_method'));
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
-mongoose.connect('mongodb://localhost/yelpcamp_v12', {useNewUrlParser: true});
+//mongoose.connect('mongodb://localhost/yelpcamp_v12', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://kasia:malami@cluster0-nwkut.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
 
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
@@ -71,6 +72,7 @@ app.use('/campgrounds', campgroundRoutes);
 //NEAT!!!!
 //eval(require('locus'));
 
+//app.listen(3000, ()=>{
 app.listen(port, process.env.IP, ()=>{
   console.log("Yelp server set up");
 });
