@@ -32,9 +32,9 @@ router.post('/register', (req, res)=>{
         });
       })
       .catch((error)=>{
-        req.flash('error', error.message); //DOEST WORK :(
+        req.flash('error', error.message);
         console.log('SIGN UP ERR'+ error.message);
-        res.render('register');
+        res.redirect('register');
       });
       /*
       User.register(newUser, req.body.password, (error, user)=>{
@@ -60,10 +60,10 @@ router.get('/login', (req, res)=>{
 router.post('/login',
         passport.authenticate('local', {
                                         successRedirect: '/campgrounds',
-                                        failureRedirect: '/login'
+                                        failureRedirect: '/login',
+                                        failureFlash: true
                               }),
         (req, res)=>{
-        //console.log();
 });
 
 //logout logic

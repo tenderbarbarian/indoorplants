@@ -9,8 +9,9 @@ const express       = require('express'),
       Campground    = require('./models/campground'),
       Comment       = require('./models/comment'),
       methodOverride = require('method-override'),
-      flash         = require('connect-flash'),
+      flash         = require('express-flash'),
       app           = express(),
+      databaseLink  = process.env.DATABASEURL || 'mongodb://localhost/yelpcamp_v12', //set up my own environment variable for DB
       port          = process.env.PORT || 3000,
       seedDB        = require('./seeds');
 
@@ -29,10 +30,11 @@ app.use(methodOverride('_method'));
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
+
 //mongoose.connect('mongodb://localhost/yelpcamp_v12', {useNewUrlParser: true});
 //mongoose.connect('mongodb+srv://kasia:malami@cluster0-nwkut.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
-//set up my own environment variable for DB
-mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
+
+mongoose.connect( databaseLink, {useNewUrlParser: true});
 
 
 passport.use(new LocalStrategy(User.authenticate()));
