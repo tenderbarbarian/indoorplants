@@ -3,7 +3,7 @@
 <div class="container my-5">
       <h1>Edit comment</h1>
 
-      <form class="" action="/campgrounds/<%= campground_id%>/comments/<%=comment._id%>?_method=PUT" method="post">
+      <form class="" action="/plants/<%= plant_id%>/comments/<%=comment._id%>?_method=PUT" method="post">
         <div class="form-group row">
           <label for="inputComment" class="col-sm-2 col-form-label">Comment</label>
           <div class="col-sm-10">
@@ -16,7 +16,7 @@
           </div>
         </div>
       </form>
-      <a class="btn btn-outline-primary btn-sm" href="/campgrounds/<%= campground_id%>">Go Back</a>
+      <a class="btn btn-outline-primary btn-sm" href="/plants/<%= plant_id%>">Go Back</a>
 </div>
 
 <% include ../partials/footer %>

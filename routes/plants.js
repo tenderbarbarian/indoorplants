@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const middleware = require('../middleware');
 
-//INDEX route - show camps
+//INDEX route - show plants
 router.get('/', (req, res) => {
 	//console.log(req.user);
 	Plant.find()
@@ -37,9 +37,9 @@ router.post('/', middleware.isLoggedIn, (req, res) => {
 		description: plantDescription,
 		author: author
 	})
-		.then((newCamp) => {
+		.then((newPlant) => {
 			console.log('Woohoo! added to the DB:');
-			//console.log(newCamp);
+			//console.log(newPlant);
 		})
 		.catch((err) => {
 			console.log("Upps couldn't add to the DB");
@@ -59,7 +59,7 @@ router.get('/:id', (req, res) => {
 			res.render('./plants/show', { plant: foundPlant });
 		})
 		.catch((err) => {
-			res.send('Sorry no such camp');
+			res.send('Sorry no such plant');
 		});
 	//res.render('show');
 });
@@ -84,7 +84,7 @@ router.put('/:id', middleware.checkPlantOwnership, (req, res) => {
 		})
 		.catch((err) => {
 			res.redirect('/plants');
-			console.log('ERROR updating camp ' + err);
+			console.log('ERROR updating plant ' + err);
 		});
 });
 
@@ -92,11 +92,11 @@ router.put('/:id', middleware.checkPlantOwnership, (req, res) => {
 router.delete('/:id', middleware.checkPlantOwnership, (req, res) => {
 	Plant.findByIdAndRemove(req.params.id)
 		.then(() => {
-			req.flash('success', 'plant deleted.');
+			req.flash('success', 'Plant deleted.');
 			res.redirect('/plants');
 		})
 		.catch((error) => {
-			console.log('cannot delete plant ' + error);
+			console.log('Cannot delete plant ' + error);
 			res.redirect('/plants/' + req.params.id);
 		});
 });

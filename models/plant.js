@@ -5,6 +5,10 @@ const plantSchema = new mongoose.Schema({
 	price: String,
 	image: String,
 	description: String,
+	light: String,
+	water: String,
+	soil: String,
+	difficulty: String,
 	comments: [
 		{
 			type: mongoose.Schema.Types.ObjectId,

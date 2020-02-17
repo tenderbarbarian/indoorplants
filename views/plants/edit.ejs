@@ -20,6 +20,30 @@
           </div>
         </div>
         <div class="form-group row">
+          <label for="inputWatering" class="col-sm-2 col-form-label">Watering</label>
+          <div class="col-sm-10">
+            <input name="plant[water]" class="form-control" id="inputWatering" value="<%=plant.water%>">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputLight" class="col-sm-2 col-form-label">Light</label>
+          <div class="col-sm-10">
+            <input name="plant[light]" class="form-control" id="inputLight" value="<%=plant.light%>">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputSoil" class="col-sm-2 col-form-label">Soil</label>
+          <div class="col-sm-10">
+            <input name="plant[soil]" class="form-control" id="inputSoil" value="<%=plant.soil%>">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="inputDifficulty" class="col-sm-2 col-form-label">Difficulty</label>
+          <div class="col-sm-10">
+            <input name="plant[difficulty]" class="form-control" id="inputDifficulty" value="<%=plant.difficulty%>">
+          </div>
+        </div>
+        <div class="form-group row">
           <label for="price" class="col-sm-2 col-form-label">Price</label>
           <div class="col-sm-10">
             <input name="plant[price]" type="number" min="0" step='0.01' class="form-control" id="price" value="<%=plant.price%>">
