@@ -44,7 +44,7 @@ router.post('/register', (req, res) => {
           return res.render('register');
           }
             passport.authenticate('local')(req, res, ()=>{
-              req.flash('success', 'Welcome to YelpCamp '+ user.username );
+              req.flash('success', 'Welcome to IndoorPlant '+ user.username );
               console.log('welcome! '+ user.username);
               res.redirect('/plants');
             });

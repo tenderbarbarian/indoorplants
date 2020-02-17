@@ -33,7 +33,7 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
-//mongoose.connect('mongodb://localhost/yelpcamp_v12', {useNewUrlParser: true});
+//mongoose.connect('mongodb://localhost/indoorplants_v1', {useNewUrlParser: true});
 //mongoose.connect('mongodb+srv://kasia:malami@cluster0-nwkut.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
 
 mongoose.connect(databaseLink, { useNewUrlParser: true });
