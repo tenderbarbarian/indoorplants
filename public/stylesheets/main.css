@@ -1,14 +1,16 @@
 .carousel-caption {
-top:58%;
--webkit-transform:translate(0, -50%);
--ms-transform:translate(0, -50%);
-transform:translate(0, -50%);
+	top: 50%;
+	-webkit-transform: translate(0, -50%);
+	-ms-transform: translate(0, -50%);
+	transform: translate(0, -50%);
 }
 
 .carousel-caption h1 {
-  font-size:5vw;
+	font-size: 5vw;
+	padding-bottom: 2rem;
 }
 
 .carousel-caption a {
-  font-size:2.5vw;
+	font-size: 1.8vw;
+	padding: 10px 30px;
 }
